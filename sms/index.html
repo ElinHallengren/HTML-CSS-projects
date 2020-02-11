@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SMS burner</title>
+    <style>
+        .container{
+            padding: 50px;
+        }
+        .border{
+            border: 1px solid red;
+            height: 100%;
+            width: 100%;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border">
+            <h1>Text messages sent to +46123456789</h1>
+            <table id="table">
+                    <tr>
+                      <th>From number</th>
+                      <th>Time</th>
+                      <th>Message</th>
+                    </tr>
+                  </table>
+                  <button class="button" onclick="addRow()">Add new row</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    var i=0;
+    function addRow(){
+        if(i==0){
+            document.getElementById("table").innerHTML += '<tr style="background-color: #dddddd;"><td>'+'+460000000'+'</td><td>'+time()+'</td><td>'+'HI mom, you are cute'+'</td></tr>';
+            i=1;
+        }
+        else{
+            document.getElementById("table").innerHTML += '<tr><td>'+'+460000000'+'</td><td>'+time()+'</td><td>'+'HI mom, you are cute'+'</td></tr>';
+            i=0;
+        }
+    }
+    function time(){
+        var currentDate = new Date(),
+        day = currentDate.getDate(),
+        month = currentDate.getMonth() + 1,
+        year = currentDate.getFullYear();
+        var currentTime = new Date(),
+        hours = currentTime.getHours(),
+        minutes = currentTime.getMinutes();
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        return (day + "/" + month + "/" + year + " " + hours + ":" + minutes);
+    }
+</script>
+</html>

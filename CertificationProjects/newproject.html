@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sceleton Project</title>
+</head>
+<style>
+    body{
+      margin: 0px;
+      padding: 0px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular';
+      overflow-x: hidden;
+      color: lightsteelblue;
+    }
+    .header {
+      background: rgb(11, 7, 43);
+      grid-area: header;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-template-areas: 
+            "logo navlink"
+    }
+    .logo{
+        height: 50px;
+        width: 100px;
+        border: 2px dotted dodgerblue;
+        grid-area: logo;
+        align-self: center;
+    }
+    .logo img{
+        margin-top: 10px;
+    }
+    .navlink{
+        grid-area: navlink;
+        display: inline-flex;
+        flex-direction: row;
+        justify-self: end;
+        align-self: center;
+    }
+    a{
+        text-decoration: none;
+        color: lightsteelblue;
+        margin-right: 40px;
+    }
+    .picture {
+      background-image: url("https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_1280.jpg");
+      grid-area: picture;
+      height: 100vh;
+      width: auto;
+    }
+    .picturetext {
+      position: absolute;
+      color: whitesmoke;
+      top: 50%;
+      left: 30%;
+      text-transform: uppercase;
+      font-size: 5em;
+    }
+    .item3 {
+      background: rgb(40, 30, 116);
+      grid-area: content;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-rows: repeat(auto-fill, 250px);
+        grid-gap: 20px;
+        align-self: center;
+        justify-self: center;
+        margin: 40px;
+    }
+    .products a{
+        border: 2px solid rgb(122, 135, 153);
+        height: 250px;
+        width: 250px;
+        background-color:  rgb(11, 7, 43);
+        color: lightsteelblue;
+    }
+    .footer {
+      background:  rgb(11, 7, 43);
+      grid-area: footer;
+      text-align: right;
+      padding-right: 50px;
+    }
+    .footer p{
+        bottom: 0px;
+    }
+    .container {
+      font-size: 1.5em;
+      height: auto;
+      width: 100%;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 75px 1fr auto 75px;
+      grid-template-areas:
+        "header"
+        "picture"
+        "content"
+        "footer";
+    }
+    
+    @media (max-width: 800px){
+      .picturetext{
+          font-size: 4em;
+      }
+    }
+    @media (max-width: 400px){
+      .picturetext{
+          font-size: 2em;
+      }
+      .products a{
+        width: 100%;
+    }
+    }
+  </style>
+<body>
+  <div class="container">
+    <div class="header">
+        <img class="logo" href="#" alt="logo">
+        <div class="navlink">
+        <a  href="#">Home</a>
+        <a  href="#">About Us</a>
+        <a  href="#">Products</a>
+        </div>
+    </div>
+    <div class="picture">
+        <div class="picturetext">Picture</div>
+    </div>
+    <div class="item3">
+        <div class="products">
+            <a class="one" href="#">ProductOne</a>
+            <a class="two" href="#">ProductTwo</a>
+            <a class="three" href="#">ProductThree</a>
+            <a class="four" href="#">ProductFour</a>
+        </div>
+    </div>
+    <div class="footer"><p>test@2019</p></div>
+  </div>
+  </body>
+</html>

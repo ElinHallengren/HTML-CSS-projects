@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+
+ 
+<!-- CSS -->
+<style type="text/css">
+.drag {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    background-color:lightgreen;
+}
+.dragone {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1;
+}
+.dragtwo {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    background-color:lightsalmon;
+}
+.dragthree {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    background-color:lightgoldenrodyellow;
+}
+#box{
+    width:600px;
+    height: 450px;
+    border:1px solid black;
+}
+.space{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.red{
+    border: 2px solid red !important;
+}
+ul{
+    list-style: none;
+}
+
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+
+</script>
+</head>
+ <body>
+    <!-- Javascript -->
+    <script>
+    
+    function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+            ev.preventDefault();
+        }
+    $(function () {
+        $("div[id='dragx']").draggable({
+            containment: "#box",
+            scroll: false,
+            drag: function(){
+            var offset = $(this).offset();
+            var xPos = offset.left;
+            var yPos = offset.top;
+            $('#posX').text('x: ' + xPos);
+            $('#posY').text('y: ' + yPos);
+        }
+        });
+    });
+    $(function () {
+        $("div[id='dragone']").draggable({
+            containment: "#box",
+            scroll: false,
+            drag: function(){
+            var offset = $(this).offset();
+            var xPosone = offset.left;
+            var yPosone = offset.top;
+            $('#posXone').text('x: ' + xPosone);
+            $('#posYone').text('y: ' + yPosone);
+            }
+        });
+    });
+    $(function () {
+        $("div[id='dragtwo']").draggable({
+            containment: "#box",
+            scroll: false,
+            drag: function(){
+            var offset = $(this).offset();
+            var xPostwo = offset.left;
+            var yPostwo = offset.top;
+            $('#posXtwo').text('x: ' + xPostwo);
+            $('#posYtwo').text('y: ' + yPostwo);
+            }
+        });
+    });
+    $(function () {
+        $("div[id='dragthree']").draggable({
+            containment: "#box",
+            scroll: false,
+            drag: function(){
+            var offset = $(this).offset();
+            var xPosthree = offset.left;
+            var yPosthree = offset.top;
+            $('#posXthree').text('x: ' + xPosthree);
+            $('#posYthree').text('y: ' + yPosthree);
+            }
+        });
+    });
+    $(document).ready(function(){
+        $("#Image").click(function(){
+            $("#box").append("<div id='dragx' class='drag'><p>Drag me<ul><li id='posX'></li><li id='posY'></li></ul></p></div>");
+        });
+
+    });
+    </script>
+    
+    <!-- HTML -->
+    <div class="space">
+        <div id="box" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            
+            <div id="dragone" class="dragone"><p>Drag one me<ul>
+                    <li id="posXone"></li>
+                    <li id="posYone"></li>
+                </ul></p></div>
+            <div id="dragtwo" class="dragtwo"><p>Drag two me<ul>
+                    <li id="posXtwo"></li>
+                    <li id="posYtwo"></li>
+                </ul></p></div>
+            <div id="dragthree" class="dragthree"><p>Drag three me<ul>
+                    <li id="posXthree"></li>
+                    <li id="posYthree"></li>
+                </ul></p></div>
+        </div>
+    </div>
+        
+      
+        <p id="text" draggable="true" ondragstart="drag(event)">This is a draggable paragraph. Drag this element into the rectangle.</p>
+
+        <button id="Image" class="btn btn-primary">Image</button>
+</body>
+</html>
+<script>
+$(function () {
+    $("div[id='dragx']").draggable({
+        containment: "#box",
+        scroll: false,
+        drag: function(){
+        var offset = $(this).offset();
+        var xPos = offset.left;
+        var yPos = offset.top;
+        $('#posX').text('x: ' + xPos);
+        $('#posY').text('y: ' + yPos);
+    }
+    });
+});</script>

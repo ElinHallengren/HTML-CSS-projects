@@ -1,0 +1,104 @@
+body{
+    font-family: 'Shadows Into Light';
+    background: paleturquoise;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    overflow-x: hidden;
+}
+#navbar{
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    background: paleturquoise;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: right;
+}
+.nav-links{
+    padding-right: 150px;
+}
+#navbar a{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 50px;
+
+}
+#welcome-section{
+    height: 100vh;
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+    background-image: url('../images/stained-red-pool-texture-bottom-65553.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 5em;
+    line-height: .5em;
+    font-weight: bolder;
+}
+.middle{
+    color: #000000;
+    font-weight: bold;
+}
+.middle p{
+    font-size: 2em;
+}
+.work{
+    background: white;
+    padding-top: 40px;
+}
+#profile-link{
+    text-decoration: none;
+    color: black;
+    border: 2px solid rgb(3, 206, 209);
+    height: 220px;
+    width: 280px;
+    margin: 40px 100px;
+    display: inline-block;
+    overflow: hidden;
+}
+.project-pic{
+    height: 180px;
+    width: 100%;
+    border-bottom: 2px solid rgb(3, 206, 209);
+}
+h3{
+    font-size: 1.5em;
+}
+.contact-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.contact-link{
+    text-decoration: none;
+    color: black;
+    border: 5px solid rgb(3, 206, 209);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 40px 20px;
+    display: table-cell;
+    line-height: 100px;
+    
+}
+
+
+footer{
+    background-color: rgb(3, 206, 209);
+
+    bottom: 0px;
+    width: 100vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media screen and (min-height: 40em){
+    .contact-links{
+        flex-direction: column;
+    }
+}

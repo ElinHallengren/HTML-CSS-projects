@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner{
+            border: 1px solid black;
+            height: 500px;
+            width: 500px;
+        }
+        #txt{
+            height: 30px;
+            width: 400px;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="inner">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <input type='text' id='txt' placeholder="Write numbers or letters only" value='' onpaste="return false" />
+        </div>
+    </div>
+    <script>
+     $("#txt").on("keypress keyup blur",function (event) {
+          switch (event.keyCode) {
+            /*Add in characters by number that you want to be included as well...
+            case 43:  // + character
+            case 40: // the ( character
+            case 41: // the ) character
+            break;*/
+            default:
+            var regex = new RegExp("^[a-zA-Z0-9]");
+            var key = event.key;
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+            break;
+        }
+});
+    </script>
+</body>
+</html>

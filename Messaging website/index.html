@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message website</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-6 cell border">
+                <div class="grid-x grid-padding-x">
+                    <div class="large-8 cell">
+                        <div  id="boxone" class="display">
+                            
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="large-10">
+                                <input id="messageone" type="text" name="messageone" value="">
+                            </div>
+                            <div class="large-2">
+                                <button id="Send" class="button" onclick="addText()" value="Send">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-6 cell border">
+                <div class="grid-x grid-padding-x">
+                    <div class="large-8 cell">
+                        <div id="boxtwo" class="display">
+                            
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="large-10">
+                                <input id="messagetwo" type="text" name="messagetwo" value="">
+                            </div>
+                            <div class="large-2">
+                                <button class="sendtwo send-button button" type="submit" onclick="addTextTwo()">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function addText()
+        {
+            document.getElementById('boxtwo').innerHTML += '<div style="color: white; border: 1px solid black; border-radius: 5px; background: gray; text-align: right; padding: 10px; line-height: 20px;"><p>'+document.getElementById('messageone').value+'<br></p></div>';
+            document.getElementById('boxone').innerHTML += '<div style="color: black; border: 1px solid black; border-radius: 5px; background: white; text-align: left; padding: 10px; line-height: 20px;"><p>'+document.getElementById('messageone').value+'<br></p></div>';
+            document.getElementById('messageone').value = "";
+        };
+        function addTextTwo()
+        {
+            document.getElementById('boxone').innerHTML += '<div style="color: white; border: 1px solid black; border-radius: 5px; background: gray; text-align: right; padding: 10px; line-height: 20px;"><p>'+document.getElementById('messagetwo').value+'<br></p></div>';
+            document.getElementById('boxtwo').innerHTML += '<div style="color: black; border: 1px solid black; border-radius: 5px; background: white; text-align: left; padding: 10px; line-height: 20px;"><p>'+document.getElementById('messagetwo').value+'<br></p></div>';
+            
+            document.getElementById('messagetwo').value = "";
+        };
+</script>
