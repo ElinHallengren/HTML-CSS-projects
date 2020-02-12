@@ -34,7 +34,7 @@ body{
 
 /*SHOWCASE*/
 #showcase{
-    background: #fff url("../images/showcase.jpg") no-repeat center center;
+    background: #fff url("https://github.com/ElinHallengren/HTML-CSS-projects/blob/master/Responsive/images/showcase.jpg") no-repeat center center;
     border-bottom: 1px solid #56a79a;
     margin-bottom: 30px;
 }
